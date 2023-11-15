@@ -6,11 +6,15 @@ import java.awt.event.ActionListener;
 public class MainFrame extends JFrame {
     private JButton btn;
     private TextPanel textPanel;
-    public MainFrame() throws HeadlessException {
+    private Toolbar toolbar;
+
+    public MainFrame() {
 
         super("Hello World");
 
         setLayout(new BorderLayout());
+
+        toolbar = new Toolbar();
 
         btn = new JButton("Click Me!");
 
@@ -22,7 +26,7 @@ public class MainFrame extends JFrame {
                 textPanel.appendText("Hello\n");
             }
         });
-
+        add(toolbar, BorderLayout.NORTH);
         add(textPanel, BorderLayout.CENTER);
         add(btn, BorderLayout.SOUTH);
 
@@ -31,24 +35,6 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
-
-
-
-
-//        JLabel jLabel1 = new JLabel("Username: ");
-//        add(jLabel1);
-//
-//        JTextField t1 = new JTextField(20);
-//        add(t1);
-//
-//        JLabel jLabel2 = new JLabel("Password: ");
-//        add(jLabel2);
-//        JTextField t2 = new JTextField(20);
-//        add(t2);
-//
-//        JButton b1 = new JButton("Submit");
-//        b1.setBounds(100, 100, 100, 50);
-//        add(b1);
 
     }
 }
