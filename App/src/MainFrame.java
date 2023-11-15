@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
-    private JTextArea textArea;
     private JButton btn;
+    private TextPanel textPanel;
     public MainFrame() throws HeadlessException {
 
         super("Hello World");
@@ -14,17 +14,16 @@ public class MainFrame extends JFrame {
 
         btn = new JButton("Click Me!");
 
-        textArea = new JTextArea();
+        textPanel = new TextPanel();
 
         btn.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
-                textArea.append("Hello\n");
+                textPanel.appendText("Hello\n");
             }
         });
 
-        add(textArea, BorderLayout.CENTER);
+        add(textPanel, BorderLayout.CENTER);
         add(btn, BorderLayout.SOUTH);
 
 
